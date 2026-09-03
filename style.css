@@ -1,0 +1,152 @@
+/* jemdoc-style academic homepage
+   classic minimal look: slate-blue headings, left menu box, serif body */
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #111;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* layout: fixed-width left menu + fluid content */
+#layout {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+#menu {
+  flex: 0 0 11em;
+  padding: 1.2em 1em;
+  margin: 1.2em 0 1.2em 0.6em;
+  background: #f4f4f4;
+  border: 1px solid #d9d9d9;
+  font-size: 0.95em;
+}
+
+#content {
+  flex: 1 1 auto;
+  padding: 1.2em 2.2em 3em 2.2em;
+  min-width: 0;
+}
+
+/* menu box */
+.menu-title {
+  font-weight: bold;
+  color: #000;
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.4em;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-list li { margin: 0.35em 0; }
+
+.menu-list a {
+  color: #5877a8;
+  text-decoration: none;
+}
+
+.menu-list a:hover { text-decoration: underline; }
+
+.menu-list a.current {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* headings */
+h1, h2, h3 {
+  color: #527bbd;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0 0 0.2em 0;
+  padding-bottom: 0.15em;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin: 1.4em 0 0.2em 0;
+  padding-bottom: 0.15em;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 1.1em 0 0.3em 0;
+}
+
+/* links */
+a { color: #4a6fb5; text-decoration: none; }
+a:hover { color: #3050a0; text-decoration: underline; }
+
+/* lists: square bullets like jemdoc */
+#content ul {
+  list-style-type: square;
+  padding-left: 1.4em;
+  margin: 0.5em 0;
+}
+
+#content ul li { margin: 0.4em 0; }
+
+#content ul ul { margin: 0.2em 0; }
+
+/* profile block on home */
+.profile {
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+
+.profile img {
+  float: left;
+  width: 160px;
+  margin: 0.3em 1.4em 0.6em 0;
+  border: 1px solid #ccc;
+}
+
+/* small utilities */
+.pubtitle { font-weight: normal; }
+.me { font-weight: bold; }
+
+hr {
+  border: none;
+  border-top: 1px solid #cfcfcf;
+  margin: 1.4em 0;
+}
+
+/* footer */
+#footer {
+  clear: both;
+  margin-top: 2em;
+  padding-top: 0.6em;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.8em;
+  color: #888;
+}
+
+/* mobile: stack menu above content */
+@media (max-width: 640px) {
+  #layout { flex-direction: column; }
+  #menu {
+    flex: none;
+    width: auto;
+    margin: 0.6em;
+  }
+  #content { padding: 1em 1.2em 2em 1.2em; }
+  .profile img { float: none; display: block; margin: 0 0 0.8em 0; }
+}
